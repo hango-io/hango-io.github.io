@@ -101,9 +101,9 @@ GET /hango/v1/service/?Action=DescribeServices
 
 3.接口统一用动词风格
 
-4.API 的请求 path 进行类型划分，以 /hango 作为的根 path ，二级 path 以版本标识，三级 path 以资源标识；版本序号：v1\v2\v3\v4 ...
+4.API 的请求 path 进行类型划分，以版本号作为的根 path，二级 path 以资源标识；版本序号：v1\v2\v3\v4 ...
 
-以 Hango 最大概念拆分，例如当前查询服务的请求 path 为：`GET /hango/v1/service/?Action=DescribeServices&ServiceId=1`
+以 Hango 最大概念拆分，例如当前查询服务的请求 path 为：`GET /v1/service/?Action=DescribeServices&ServiceId=1`
 ```
 服务：/service
 路由：/route
@@ -114,9 +114,9 @@ GET /hango/v1/service/?Action=DescribeServices
 
 6.复数和单数查询接口归一，以过滤参数区分，用于精简各类命名的接口；案例如下
 
-查询服务：/hango/service?Action=DescribeSerices&Offset=0&Limit=20
+查询服务：/v1/service?Action=DescribeSerices&Offset=0&Limit=20
 
-查询 serviceId 为 1 的服务：/hango/service?Action=DescribeSerices&ServiceId=1
+查询 serviceId 为 1 的服务：/v1/service?Action=DescribeSerices&ServiceId=1
 
 ### 二、请求参数规范
 
