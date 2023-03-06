@@ -11,7 +11,7 @@ nav:
         - 配置: getting-started/quick-start/config.md
       - RoadMap:
         - 2022: getting-started/roadmap/roadmap-2022.md
-        - 2022: getting-started/roadmap/roadmap-2023.md
+        - 2023: getting-started/roadmap/roadmap-2023.md
 
     - 用户指南:
       - Overview: user-guide/index.md
