@@ -21,6 +21,9 @@ nav:
         - 优势与特性: user-guide/architecture/advantages.md
 
       - 最佳实践:
+        - 虚拟网关:
+          - 虚拟网关: user-guide/best-practices/virtual-gateway/virtual-gateway.md
+          - Kubernetes Gateway: user-guide/best-practices/virtual-gateway/kubernetes-gateway-API.md
         - 服务与路由:
           - 服务管理: user-guide/best-practices/service-route/service.md
           - 路由管理: user-guide/best-practices/service-route/route.md
