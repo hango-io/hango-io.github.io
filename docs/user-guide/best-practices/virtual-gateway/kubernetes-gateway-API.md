@@ -31,9 +31,21 @@ Gateway API作为Kubernetes入口网关的最新成果，得到行业的广泛�
 ![](imgs/Kubernetes Gateway技术架构图.png)
 ## 4.操作步骤
 ### 4.1、创建GatewayAPI CRD
-在大多数 Kubernetes 集群中，默认情况下不会安装 Gateway API。如果 GatewayAPI CRD 不存在，请安装
+使用Hango k8s Gateway虚拟网关特性前，需要确保环境上已正确配置了k8s Gateway的CRD，若未配置CRD，仅希望体验功能的用户可以通过Hango提供的[简易版CRD](./file/k8s_gateway_api_crd.yaml)进行临时配置，后续若有实际需求的用户可以引用k8s官方提供的CRD内容
+
 ```shell
-kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v0.6.1/standard-install.yaml -n hango-system
+## Hango提供的k8s Gateway CRD删除了各类的字段校验和权限内容（仅供体验使用）
+kubetcl apply -f k8s_gateway_api_crd.yaml
+```
+
+```shell
+## 删除命令
+kubetcl delete -f k8s_gateway_api_crd.yaml
+```
+
+官方地址CRD资源地址如下
+```
+https://github.com/kubernetes-sigs/gateway-api/tree/v0.5.1/config/crd/standard
 ```
 ### 4.2、创建测试的上游服务
 在命名空间 hango-system下创建流量要转发到的相关服务,以下为用于测试的httpbin服务
@@ -92,7 +104,7 @@ metadata:
     hango.io/gateway.project: "1" 
 spec:
 #addresses字段指定k8s Gateway作用的网关，若不指定，istio会自动为每一个k8s Gateway生成Service和Deployment作为网关代理。
-#type字段只支持Hostname类型，value为envoy proxy的 service地址，并且要求 serive中已开放了listener中的端口，否则gateway无法生效。
+#type字段只支持Hostname类型，value为envoy proxy的 service地址，并且要求 service中已开放了listener中的端口，否则gateway无法生效。
   addresses:
     - type: Hostname
       value: hango-proxy.hango-system.svc.cluster.local
@@ -101,7 +113,7 @@ spec:
   listeners:
     - name: http
       protocol: HTTP
-      port: 80
+      port: 80 #envoy proxy的service也需要暴露相同的端口
       allowedRoutes:
         namespaces:
           from: All
@@ -168,7 +180,7 @@ curl --location --request GET '10.178.85.241:80/get' --header 'Host: abc.example
 ![](imgs/gateway请求回显.png)
 ### 4.6、插件增强
 GatewayAPI可以通过在HTTPRoute中添加Filter实现插件的配置，
-目前Istio只支持```HTTPRouteFilterRequestHeaderModifier```、```HTTPRouteFilterRequestRedirect```和```HTTPRouteFilterRequestMirror```
+目前Istio开源社区只支持```HTTPRouteFilterRequestHeaderModifier```、```HTTPRouteFilterRequestRedirect```和```HTTPRouteFilterRequestMirror```
 ```shell
 kubectl apply -f - <<EOF
 apiVersion: gateway.networking.k8s.io/v1beta1
