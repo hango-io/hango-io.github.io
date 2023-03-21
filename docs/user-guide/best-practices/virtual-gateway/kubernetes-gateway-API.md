@@ -30,6 +30,34 @@ Gateway API作为Kubernetes入口网关的最新成果，得到行业的广泛�
   hango在此基础之上对HttpRoute做了插件上的增强，提供了更多丰富的插件能力。
 ![](imgs/Kubernetes Gateway技术架构图.png)
 ## 4.操作步骤
+
+### 特殊说明
+Hango api-plane 模块存在资源监听开关，用于监听 k8s Gateway、Ingress 等资，若需要使用功能，请在安装阶段打开，`v1.3.2` 版本后默认关闭，源配置与如下文件
+
+```shell
+文件路径
+install/helm/hango-gateway/charts/hango-gateway/templates/base/hango-gateway/hango-gateway-configmap.yaml
+```
+
+```yaml
+## 找到如下配置段落
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hango-api-plane-config
+  namespace: {{ .Values.namespace }}
+data:
+  k8s.yaml: |-
+    k8s:
+      clusters:
+        master:
+          k8s-api-server: ""
+          cert-data: ""
+          key-data: ""
+          watch-resource: false ## 此处为资源监听开关
+```
+
+
 ### 4.1、创建GatewayAPI CRD
 使用Hango k8s Gateway虚拟网关特性前，需要确保环境上已正确配置了k8s Gateway的CRD，若未配置CRD，仅希望体验功能的用户可以通过Hango提供的[简易版CRD](./file/k8s_gateway_api_crd.yaml)进行临时配置，后续若有实际需求的用户可以引用k8s官方提供的CRD内容
 

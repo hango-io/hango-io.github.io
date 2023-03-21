@@ -78,23 +78,23 @@ Hango可对接多集群网关资源，默认创建一个Gateway资源（hango_en
 >
 >5.域名列表： 访问网关需要携带的域名
 
-### 4.对接数据库
+## 4.对接数据库
 
 Hango默认安装对接内存数据库H2，可通过更改配置对接其他类型数据库，以下以MySQL为例
 
 依赖：除MySQL数据库外，其他数据库需要在Hango-portal工程中引入驱动依赖，重新打包
 
-#### 4.1.导入数据表依赖
+### 4.1.导入数据表依赖
 
 在MySQL客户端中执行[数据表](https://github.com/hango-io/portal/blob/main/gateway-portal/src/main/resources/schema.sql)和[初始数据](https://github.com/hango-io/portal/blob/main/gateway-portal/src/main/resources/data.sql)
 
-#### 4.2.通过如下命令修改hango-portal的ConfigMap
+### 4.2.通过如下命令修改hango-portal的ConfigMap
 
 ```yaml
 kubectl edit cm -n hango-system hango-portal-config
 ```
 
-#### 4.3.修改如下配置
+### 4.3.修改如下配置
 ```yaml
 ## H2配置
 spring.datasource.platform=h2
@@ -110,13 +110,13 @@ spring.datasource.username=[your username]
 spring.datasource.password=[your password]
 ```
 
-#### 4.4.重启hango-portal
+### 4.4.重启hango-portal
 
 通过如下命令重启hango-portal
 ```yaml
 kubectl delete po -n hango-system [hango-portal Pod名称]
 ```
 
-#### 4.5.通过脚本创建初始网关
+### 4.5.通过脚本创建初始网关
 
 可通过[网关初始化脚本](https://github.com/hango-io/hango-gateway/blob/master/install/init-hango/init.sh)创建初始网关对象；也可通过手动配置[创建网关](#3.网关配置)

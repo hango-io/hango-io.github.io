@@ -1,4 +1,4 @@
-# RoadMap
+# Hango 2022 RoadMap
 
 ## 介绍
 
@@ -34,7 +34,9 @@
 * 【易用性】支持插件的部分常规输入校验
 * 【治理】集成smartlimit，统一集群限流，本地限流实现
 
-### Hango 1.3.0(发布中)
+### Hango 1.3.0(已拆分)
+
+> 见 [Hango 2023 RoadMap](./roadmap-2023.md)
 
 * 【高可用】支持基于多集群的两地三中心高可用部署
 * 【高可用】支持基于Region、Zone、Sub-zone的区域路由优先能力

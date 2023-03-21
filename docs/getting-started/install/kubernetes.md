@@ -2,7 +2,7 @@
 
 ## 前置条件
 
-1.目前版本支持基于Kubernetes进行安装，如果没有Kubernetes环境，可以采用**[:material-arrow-right-thick: :material-kubernetes: Kubernetes](https://minikube.sigs.k8s.io/docs/start/)** 进行安装。对于Kubernetes的版本，我们要求版本至少是1.17 版本。
+1.目前版本支持基于Kubernetes进行安装，如果没有Kubernetes环境，可以采用 [:material-arrow-right-thick: :material-kubernetes: Kubernetes](https://minikube.sigs.k8s.io/docs/start/) 进行安装。对于Kubernetes的版本，我们要求版本至少是1.17 版本。
 
 2.请确保已安装helm。
 
@@ -19,7 +19,8 @@ install
 ├─check.sh
 └─uninstall.sh
 ```
-2、您将看到3个脚本分别用于安装（install.sh）、检查状态（check.sh）、卸载（uninstall.sh），可直接执行命令\
+2、您将看到3个脚本分别用于安装（install.sh）、检查状态（check.sh）、卸载（uninstall.sh），可直接执行命令
+
 注意：在脚本执行前请确保权限足够
 ```shell
 sh install.sh
@@ -49,8 +50,10 @@ slime-75fcb44f68-w9x4x             1/1     Running   0          94s
 
 ### 卸载hango网关
 
-1、进入"hango-gateway/install"目录下\
-2、执行命令运行脚本卸载hango网关\
+1、进入"hango-gateway/install"目录下
+
+2、执行命令运行脚本卸载hango网关
+
 注意：在脚本执行前请确保权限足够
 ```shell
 sh uninstall.sh

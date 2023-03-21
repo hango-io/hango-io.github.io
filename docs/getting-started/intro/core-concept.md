@@ -26,7 +26,7 @@ Hango 提供请求代理、动态路由、负载均衡、限流、熔断、健�
 
 * **多场景**：具备支撑微服务网关、七层负载均衡、Kubernetes Ingress、Serverless网关等多种场景能力
 
-* **云原生**：以云原生标准数据面组件 **Envoy** 作为核心引擎，天然亲和云原生；可作为 Kubernetes、**Service Mesh**、Serverless 的 Ingress、Gateway 实现
+* **云原生**：以云原生标准数据面组件 **Envoy** 作为核心引擎，天然亲和云原生；可作为 Kubernetes、Service Mesh、Serverless 的 Ingress、Gateway 实现
 
 * **API生态与集成**：以 API 为中心的生态管理，提供数百种工业级协议快速集成能力（后续提供）
 
