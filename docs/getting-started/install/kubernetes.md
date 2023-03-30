@@ -6,6 +6,16 @@
 
 2.请确保已安装helm。
 
+3.如果是使用[minikube](https://minikube.sigs.k8s.io/docs/start/)进行部署，最少需要额外预留4G的内存给hango网关进行部署。
+由于k8s组件也需要占据一定的内存空间，因此我们推荐给集群配置5G的内存空间， 要扩展Minikube的内存大小可以参考以下命令：
+```shell
+minikube config set memory 5120
+```
+停止 Minikube 并重新启动以使更改生效：
+```shell
+   minikube stop
+   minikube start
+```
 ### 安装hango网关
 
 1、进入"hango-gateway/install"目录下，目录结构树如下
@@ -43,7 +53,15 @@ istio-e2e-app-85bb49bf75-t7slt     1/1     Running   0          101s
 hango-istiod-697b5c4456-67l92      1/1     Running   0          95s
 slime-75fcb44f68-w9x4x             1/1     Running   0          94s
 ```
-
+4、访问hango的前端页面需要通过hango-ui的service暴露的端口进行访问
+```shell
+kubectl get svc -n hango-system |grep hango-ui
+```
+如果是基于minikube进行安装，可以运行以下命令来获取 hango-ui的Service的URL：
+```shell
+minikube service hango-ui --url
+```
+这将返回hango-ui的Service的URL，例如 http://192.168.49.2:30768，复制 URL 并在 Web 浏览器中打开它即可访问前端页面
 ### 其他方式安装hango网关
 
 1、请参考脚本内容配置hango的k8s资源
