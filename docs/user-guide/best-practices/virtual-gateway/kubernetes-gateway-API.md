@@ -119,7 +119,7 @@ EOF
 ### 4.2、创建Gateway的CRD资源
 ```shell
 kubectl apply -f - <<EOF
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: Gateway
 metadata:
   name: demo-gateway
@@ -154,10 +154,10 @@ https://gateway-api.sigs.k8s.io/references/spec/#gateway.networking.k8s.io/v1bet
 ### 4.3、创建HttpRoute的CRD资源
 ```shell
 kubectl apply -f - <<EOF
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: HTTPRoute
 metadata:
-  name: demo-httpRoute
+  name: demohttproute
   labels:
     istio.io/rev: gw-1.12
   namespace: hango-system
@@ -211,10 +211,10 @@ GatewayAPI可以通过在HTTPRoute中添加Filter实现插件的配置，
 目前Istio开源社区只支持```HTTPRouteFilterRequestHeaderModifier```、```HTTPRouteFilterRequestRedirect```和```HTTPRouteFilterRequestMirror```
 ```shell
 kubectl apply -f - <<EOF
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: HTTPRoute
 metadata:
-  name: demo-httpRoute
+  name: demohttproute
   labels:
     istio.io/rev: gw-1.12
   namespace: gateway-system
