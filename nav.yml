@@ -37,6 +37,7 @@ nav:
           - 降级: user-guide/best-practices/traffic-manage/downgrade.md
           - 流量染色: user-guide/best-practices/traffic-manage/traffic-mark.md
         - 安全:
+          - HTTPS: user-guide/best-practices/domain-certificate/domain.md
           - CORS: user-guide/best-practices/security/cors.md
           - Dos: user-guide/best-practices/security/Dos.md
           - 黑白名单: user-guide/best-practices/security/black-white.md
