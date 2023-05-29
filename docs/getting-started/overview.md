@@ -8,7 +8,7 @@
 
 想知道什么是Hango？了解一下「[核心概念](intro/core-concept.md)」。
 
-如果你希望快速体验Hango，请参考「[快速上手](quick-start/quick-start.md)」。
+如果你希望快速体验Hango，请参考「[快速上手](quick-start/quick-start-v1.3.0.md)」。
 
 ## :book: 使用
 如果你希望尝试一下Hango，但不知道如何开始？

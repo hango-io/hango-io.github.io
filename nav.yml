@@ -7,7 +7,9 @@ nav:
       - 快速接入: 
         - 部署: 
           - Kubernetes部署: getting-started/install/kubernetes.md
-        - 使用: getting-started/quick-start/quick-start.md
+        - 使用:
+          - v1.2.0及之前版本: getting-started/quick-start/quick-start-v1.2.0.md
+          - v1.3.0及之后版本: getting-started/quick-start/quick-start-v1.3.0.md
         - 配置: getting-started/quick-start/config.md
       - RoadMap:
         - 2022: getting-started/roadmap/roadmap-2022.md
@@ -25,8 +27,12 @@ nav:
           - 虚拟网关: user-guide/best-practices/virtual-gateway/virtual-gateway.md
           - Kubernetes Gateway: user-guide/best-practices/virtual-gateway/kubernetes-gateway-API.md
         - 服务与路由:
-          - 服务管理: user-guide/best-practices/service-route/service.md
-          - 路由管理: user-guide/best-practices/service-route/route.md
+          - 服务管理:
+            - 1.2.0及之前版本: user-guide/best-practices/service-route/service-v1.2.0.md
+            - 1.3.0及之后版本: user-guide/best-practices/service-route/service-v1.3.0.md
+          - 路由管理:
+            - 1.2.0及之前版本: user-guide/best-practices/service-route/route-v1.2.0.md
+            - 1.3.0及之后版本: user-guide/best-practices/service-route/route-v1.3.0.md
           - Dubbo Bridge: user-guide/best-practices/service-route/dubbo-bridge.md
           - Kubernetes服务发现: user-guide/best-practices/service-route/kubernetes.md
           - Eureka服务发现: user-guide/best-practices/service-route/eureka.md
