@@ -10,7 +10,7 @@ Hango网关是怎么诞生的？了解一下[Hango的诞生背景](architecture/
 
 ## :star2: 最佳实践
 
-本章节将为你展示Hango的核心概念，包括[服务](best-practices/service-route/service.md)与[路由](best-practices/service-route/route.md)，各类服务发现能力及各类流量治理能力等
+本章节将为你展示Hango的核心概念，包括[服务](best-practices/service-route/service-v1.2.0.md)与[路由](best-practices/service-route/route-v1.2.0.md)，各类服务发现能力及各类流量治理能力等
 
 希望内部的Eureka服务暴露到网关？请参考[对接eureka注册中心](best-practices/service-route/eureka.md)
 
