@@ -11,7 +11,7 @@ theme:
   name: material
   language: zh
   logo: assets/hango-logo.svg
-  favicon: assets/todo.png
+  favicon: assets/icon.jpg
   custom_dir: overrides
   icon:
     repo: fontawesome/brands/github
