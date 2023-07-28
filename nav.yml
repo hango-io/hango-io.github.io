@@ -24,6 +24,7 @@ nav:
         - 虚拟网关:
           - 虚拟网关: user-guide/best-practices/virtual-gateway/virtual-gateway.md
           - Kubernetes Gateway: user-guide/best-practices/virtual-gateway/kubernetes-gateway-API.md
+          - Kubernetes Ingress: user-guide/best-practices/virtual-gateway/kubernetes-ingress.md
         - 服务与路由:
           - 服务管理: user-guide/best-practices/service-route/service.md
           - 路由管理: user-guide/best-practices/service-route/route.md
