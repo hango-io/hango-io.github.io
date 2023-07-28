@@ -1,4 +1,4 @@
-> 支持版本: v2.1.0+
+> 支持版本: v1.5.0+
 ## 1.Ingress 功能概述
    Ingress是K8s生态中定义流量入口的一种资源，但其只是个规则，仅创建Ingress资源本身是没有任何效果的，想让其生效，就需要有一个Ingress Controller去监听K8s中的ingress资源，
    并对这些资源进行规则解析，转换为其数据面中的代理规则，并由数据面来进行流量转发。当前K8s默认的Ingress Controller实现是Nginx，本次方案描述如何将通用网关纳管Ingress的流量。
@@ -13,7 +13,6 @@
    kind: Ingress
    metadata:
       annotations:
-         istio.io/rev: gw-1.12
          kubectl.kubernetes.io/last-applied-configuration: |
             {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"istio"},"name":"test","namespace":"hango-system"},"spec":{"ingressClassName":"istio","rules":[{"http":{"paths":[{"backend":{"service":{"name":"istio-e2e-app","port":{"number":80}}},"path":"/get","pathType":"Prefix"}]}}]}}
          kubernetes.io/ingress.class: hango
@@ -23,6 +22,8 @@
       name: test
       namespace: hango-system
       resourceVersion: "9320368"
+      labels:
+        istio.io/rev: gw-1.12
       uid: 1ba7e839-da43-4c00-afeb-85d173911003
    spec:
       rules:
@@ -103,9 +104,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    istio.io/rev: gw-1.12
     kubernetes.io/ingress.class: hango
     skiff.netease.com/project: hango
+  labels:
+    istio.io/rev: gw-1.12
   name: test
   namespace: hango-system
 spec:
