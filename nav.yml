@@ -57,6 +57,7 @@ nav:
           - 链路: user-guide/best-practices/observability/tracing.md
 
       - 扩展开发:
+        - 插件市场: user-guide/extension/plugin-market.md
         - 自定义插件使用: user-guide/extension/plugin.md
 
       - OpenAPI:
