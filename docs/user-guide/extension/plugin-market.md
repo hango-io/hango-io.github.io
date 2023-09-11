@@ -2,7 +2,7 @@
 
 > 支持版本: v1.6.0+
 
-Hango网关支持集成插件市场功能，允许用户通过配置插件市场来管理和使用各类自定义插件能力，以下罗列当前版本支持的插件类型、形态和作用域
+Hango网关支持集成插件市场功能，补足了初版自定义插件不易集成的问题，进一步提升了易用性，允许用户通过配置插件市场来管理和使用各类自定义插件能力，以下罗列当前版本支持的插件类型、形态和作用域
 
 | 插件类型 | 形态        | 范围      |
 |------|-----------|---------|
@@ -176,11 +176,13 @@ tinygo build -o main.wasm -scheduler=none -target=wasi ./main.go
 Envoy支持本地对Wasm插件的调试，但在调试前需要准备以下资源：
 
 #### 安装docker-compose
+
 开发环境必须安装docker-compose，如果没有需要先安装 https://docs.docker.com/compose/install/
 
 #### 下载Rider SDK
 
 通过git下载Rider SDK，以下基于SDK本地开发和调试WASM插件
+
 ```shell
 git clone https://github.com/hango-io/rider.git
 ```
@@ -286,7 +288,7 @@ Lua插件上传插件市场的步骤与Wasm一致，以下仅给出Dockerfile和
 
 ### 2.1.Lua代码
 
-以下定义一个简单Lua脚本，在响应头阶段，将插件配置解析，返回到响应头（x-lua-test：{配置JSON}）
+以下定义一个简单Lua脚本，在响应头阶段，将插件配置解析，返回到响应头（`x-lua-test：{配置JSON}`）
 
 ```Lua
 require('rider.v2')
@@ -301,7 +303,7 @@ local responseHeaderHandler = {}
 responseHeaderHandler.version = 'v2'
 
 
--- 定义response的body阶段处理函数
+-- 定义response的header阶段处理函数
 function responseHeaderHandler:on_response_header()
     local config = envoy.get_route_config()
 
