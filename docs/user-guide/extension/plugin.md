@@ -159,7 +159,7 @@ typed_per_filter_config:
 
 通过`curl -v http://localhost:8002/static-to-header`
 
-![](./img/rider_uri_restriction_test_ok.png)
+![](./img/本地调测结果图.png)
 
 response: `403 Foebidden`
 
@@ -246,8 +246,9 @@ hango网关自定义插件支持两种级别：全局级别和路由级别；全
 
 (3) 在/plugin/route目录下增加uri-restriction.json schema文件
 
+--- uri-restriction.json
 ```json
----uri-restriction.json
+
 {
   "formatter": {
     "kind": "uri-restriction",
