@@ -645,7 +645,7 @@ git clone https://github.com/hango-io/rider.git
 
 通过`curl -v http://localhost:8002/static-to-header`，可以观察到响应头返回：`x-wasm-header: demo-wasm`（即envoy.yaml文件内所填mock参数）
 
-### 1.5.构建Docker镜像
+### 2.5.构建Docker镜像
 
 Dockerfile如下，通过空镜像构建，将wasm文件拷贝至镜像，其中拷贝到容器内的目标文件名必须是`plugin.wasm`
 
