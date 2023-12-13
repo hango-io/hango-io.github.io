@@ -43,6 +43,8 @@ nav:
           - 熔断: user-guide/best-practices/traffic-manage/circuit-breaker.md
           - 降级: user-guide/best-practices/traffic-manage/downgrade.md
           - 流量染色: user-guide/best-practices/traffic-manage/traffic-mark.md
+          - 服务预热: user-guide/best-practices/traffic-manage/service-warmup.md
+          - 会话保持: user-guide/best-practices/traffic-manage/stateful-session.md
         - 安全:
           - SSL证书管理: user-guide/best-practices/domain-certificate/certificate.md
           - 域名管理: user-guide/best-practices/domain-certificate/domin.md
